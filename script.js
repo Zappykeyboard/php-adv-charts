@@ -14,7 +14,8 @@ function getData(){
     success: function(data) {
       console.log(data);
 
-      createMontlySalesChart(data)
+      createMontlySalesChart(data.fatturato);
+      createSalesByAgentChart(data.fatturato_by_agent);
     },
     error: function(err){
 
@@ -22,21 +23,40 @@ function getData(){
   })
 }
 
-function createMontlySalesChart(data){
+function createMontlySalesChart(dataset){
 
   var element = document.getElementById('monthly-sales').getContext('2d');
 
   var chart = new Chart(element, {
-    type:'line',
+    type: dataset.type,
     data: {
       labels: moment.months(),
       datasets: [{
         label: 'Vendite mensili',
         backgroundColor: 'rgb(105, 150, 132)',
         borderColor: 'rgb(255, 99, 132)',
-        data: data
+        data: dataset.data
       }]
     }
   })
 
+}
+
+function createSalesByAgentChart(dataset){
+  var element = document.getElementById('sales-by-agent').getContext('2d');
+  var salesPeople = Object.keys(dataset.data);
+  var sales = Object.values(dataset.data);
+
+  var chart = new Chart(element, {
+    type: dataset.type,
+    data: {
+      labels: salesPeople,
+      datasets: [{
+        label: 'Vendite per agente',
+        backgroundColor: 'rgb(105, 150, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: sales
+      }]
+    }
+  })
 }
