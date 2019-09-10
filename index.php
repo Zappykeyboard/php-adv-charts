@@ -27,10 +27,9 @@
     <title>php-adv-charts</title>
   </head>
   <body>
-    <h1>Hello world</h1>
 
     <canvas id='monthly-sales'></canvas>
 
-    <canvas id='sales-byagent'></canvas>
+    <canvas id='sales-by-agent'></canvas>
   </body>
 </html>
