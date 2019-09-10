@@ -30,5 +30,7 @@
     <h1>Hello world</h1>
 
     <canvas id='monthly-sales'></canvas>
+
+    <canvas id='sales-byagent'></canvas>
   </body>
 </html>
