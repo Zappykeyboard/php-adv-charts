@@ -28,5 +28,7 @@
   </head>
   <body>
     <h1>Hello world</h1>
+
+    <canvas id='monthly-sales'></canvas>
   </body>
 </html>
