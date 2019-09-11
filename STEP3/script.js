@@ -20,7 +20,7 @@ function getData() {
   $.ajax({
     url: 'fulldb.php',
     method: 'GET',
-    data: {'level': 'guest'},
+    data: {'level': 'c-level'},
     success: function (data) {
       console.log(data);
       if(data){
@@ -164,25 +164,6 @@ function makeLineChart(dataset, ID) {
     });
     
   }
-  //array contenente gli array di dati
-  /* var dataArr = Object.values(dataset);
-  console.log(Object.values(dataArr));
-
-  for (var i = 0; i < dataArr.length; i++){
-    var myArr = dataArr[i];
-    var myDataset = {};
-    myDataset.label = ID;
-    myDataset.backgroundColor = getRandRGB();
-    myDataset.borderColor = getRandRGB();
-    myDataset.data = myArr;
-    theDatasets.push(myDataset);
-    console.log(myDataset);
-    console.log(theDatasets);
-    
-  }
- */ 
-
- 
 
 }
 
@@ -216,44 +197,3 @@ function makePieChart(dataset, ID){
   })
 }
 
-/* function createMontlySalesChart(dataset){
-
-  var element = document.getElementById('monthly-sales').getContext('2d');
-
-  var chart = new Chart(element, {
-    type: dataset.type,
-    data: {
-      labels: moment.months(),
-      datasets: [{
-        label: 'Vendite mensili',
-        backgroundColor: 'rgb(105, 150, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: dataset.data
-      }]
-    }
-  })
-
-} */
-
-/* function createSalesByAgentChart(dataset) {
-  var element = document.getElementById('sales-by-agent').getContext('2d');
-  var salesPeople = Object.keys(dataset.data);
-  var sales = Object.values(dataset.data);
-
-  var chart = new Chart(element, {
-    type: dataset.type,
-    data: {
-      labels: salesPeople,
-      datasets: [{
-        label: 'Vendite per agente',
-        backgroundColor: [
-          'rgb(105, 150, 132)',
-          'rgb(204, 51, 255)',
-          'rgb(102, 255, 102)',
-          'rgb(255, 153, 51)'],
-        borderColor: 'rgb(255, 99, 132)',
-        data: sales
-      }]
-    }
-  })
-} */
