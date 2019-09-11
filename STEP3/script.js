@@ -20,10 +20,10 @@ function getData() {
   $.ajax({
     url: 'fulldb.php',
     method: 'GET',
-    data: {'level': 'c'},
+    data: {'level': 'guewst'},
     success: function (data) {
       console.log(data);
-      if($.isPlainObject(data)){
+      if(Array.isArray(data)){
         generateCanvas(data);
       } else {
         $('body').html('Parametro non corretto');
