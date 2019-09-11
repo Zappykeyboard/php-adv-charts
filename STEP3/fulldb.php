@@ -5,7 +5,7 @@
 
   $level = $_GET['level'];
 
-  //nota: questo sistema nonriporta le chiavi dei graph
+  //nota: questo sistema non riporta le chiavi dei graph
   switch($level) {
     case "guest":
       $res[] = $graphs['fatturato'];
