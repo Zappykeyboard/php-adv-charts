@@ -15,7 +15,8 @@ function getData(){
       console.log(data);
 
       createMontlySalesChart(data.fatturato);
-      createSalesByAgentChart(data.fatturato_by_agent);
+      createSalesByAgentChart(data.fatturato_by_agent); 
+     
     },
     error: function(err){
 
@@ -53,7 +54,11 @@ function createSalesByAgentChart(dataset){
       labels: salesPeople,
       datasets: [{
         label: 'Vendite per agente',
-        backgroundColor: 'rgb(105, 150, 132)',
+        backgroundColor: [
+          'rgb(105, 150, 132)',
+          'rgb(204, 51, 255)',
+          'rgb(102, 255, 102)',
+          'rgb(255, 153, 51)'],
         borderColor: 'rgb(255, 99, 132)',
         data: sales
       }]
