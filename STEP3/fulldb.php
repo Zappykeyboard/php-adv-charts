@@ -18,7 +18,7 @@
       $res = $graphs;
       break;
     default:
-      echo('Parametro non valido');
+      $res= 'Parametro non valido';
   }
 
   echo json_encode($res);
